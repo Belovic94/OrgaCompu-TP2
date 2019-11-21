@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.13.4)
 project(OrgaCompu_TP2)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -10,4 +10,4 @@ add_executable(OrgaCompu_TP2
         tests/prueba3b.mem
         tests/prueba4.mem
         tests/prueba5.mem
-        main.c command.c command.h cache.c cache.h queue.c queue.h cache_block.c cache_block.h)
+        main.c command.c command.h cache.c cache.h queue.c queue.h cache_block.c cache_block.h fileReader.c fileReader.h commandParser.c commandParser.h)

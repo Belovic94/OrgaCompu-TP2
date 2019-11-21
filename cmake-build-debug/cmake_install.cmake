@@ -1,4 +1,4 @@
-# Install script for directory: /home/valeriarocha/OrgaCompu-TP2
+# Install script for directory: /home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
