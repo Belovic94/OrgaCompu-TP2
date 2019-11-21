@@ -4,9 +4,10 @@
 typedef struct {
     int tag;
     int valid;
+    int oldest;
 }cache_block_t;
 
-int cache_block_create(cache_block_t* self, char* command);
+void cache_block_create(cache_block_t* self);
 
 void cache_block_destroy(cache_block_t* self);
 
