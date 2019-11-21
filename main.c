@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
             continue;
         }
         command_executor_execute(&commandExecutor, &command);
+        command_destroy(&command);
         printf("%s", line);
     }
     exit(EXIT_SUCCESS);
