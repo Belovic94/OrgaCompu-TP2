@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="OrgaCompu_TP2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OrgaCompu_TP2">
+				<Option output="/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/OrgaCompu_TP2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 OrgaCompu_TP2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OrgaCompu_TP2/fast">
+				<Option output="/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/OrgaCompu_TP2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 OrgaCompu_TP2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/valeriarocha/OrgaCompu-TP2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/cache.c">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/cache.h">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/cache_block.c">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/cache_block.h">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/command.c">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/command.h">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/main.c">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/queue.c">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/queue.h">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/tests/prueba1.mem">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/tests/prueba2.mem">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/tests/prueba3.mem">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/tests/prueba3b.mem">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/tests/prueba4.mem">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/tests/prueba5.mem">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/valeriarocha/OrgaCompu-TP2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
