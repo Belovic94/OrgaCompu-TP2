@@ -10,6 +10,4 @@ int command_create(command_t* self, char* line);
 
 void command_destroy(command_t* self);
 
-char command_execute(command_t* self);
-
 #endif //ORGACOMPU_TP2_COMMAND_H

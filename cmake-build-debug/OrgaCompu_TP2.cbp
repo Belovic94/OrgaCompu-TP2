@@ -102,6 +102,12 @@
 		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/command.h">
 			<Option target="OrgaCompu_TP2"/>
 		</Unit>
+		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/commandExecutor.c">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/commandExecutor.h">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
 		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/commandParser.c">
 			<Option target="OrgaCompu_TP2"/>
 		</Unit>
@@ -117,10 +123,22 @@
 		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/main.c">
 			<Option target="OrgaCompu_TP2"/>
 		</Unit>
+		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/mainMemory.c">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/mainMemory.h">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
 		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/queue.c">
 			<Option target="OrgaCompu_TP2"/>
 		</Unit>
 		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/queue.h">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/strutil.c">
+			<Option target="OrgaCompu_TP2"/>
+		</Unit>
+		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/strutil.h">
 			<Option target="OrgaCompu_TP2"/>
 		</Unit>
 		<Unit filename="/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/tests/prueba1.mem">

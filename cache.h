@@ -10,7 +10,7 @@ typedef struct
     queue_t *ways;
 } cache_t;
 
-int cache_create(cache_t *self, char *command);
+int cache_create(cache_t *self);
 
 void cache_destroy(cache_t *self);
 
