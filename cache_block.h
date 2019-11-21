@@ -2,6 +2,8 @@
 #define ORGACOMPU_TP2_CACHE_BLOCK_H
 
 typedef struct {
+    int tag;
+    int valid;
 }cache_block_t;
 
 int cache_block_create(cache_block_t* self, char* command);

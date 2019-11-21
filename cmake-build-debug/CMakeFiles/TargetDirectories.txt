@@ -1,3 +1,0 @@
-/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/cmake-build-debug/CMakeFiles/OrgaCompu_TP2.dir
-/home/victorbelosevich/Documents/FIUBA/OrgaCompus/TP2/OrgaCompu-TP2/cmake-build-debug/CMakeFiles/edit_cache.dir

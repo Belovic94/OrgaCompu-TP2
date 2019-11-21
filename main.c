@@ -22,6 +22,10 @@ int write_byte(unsigned int ddddd, char vvv)
     return 0;
 }
 
+void init() {
+
+}
+
 int main(int argc, char *argv[])
 {
     FILE *fp;
