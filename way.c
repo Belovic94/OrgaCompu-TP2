@@ -33,3 +33,8 @@ void way_write_back(way_t *self, unsigned int index) {
         main_memory_save_block(self->block, pos);
     }
 }
+
+void way_write_byte(way_t *self, unsigned int offset, unsigned char value) {
+    self->dirty = 1;
+    self->block[offset] = value;
+}

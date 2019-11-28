@@ -10,15 +10,9 @@ int cache_create() {
 
 void cache_destroy() {}
 
-unsigned int select_oldest(unsigned int setnum) {
-    set_t *selected_set = cache->set[setnum];
-    return set_get_oldest(selected_set);
-}
-
-write_tomem(unsigned int blocknum, unsigned int way, unsigned int set) {
-}
-
-void write_byte(unsigned int address, unsigned char value) {
+void cache_write_byte(unsigned int address, unsigned char value) {
+    cache->access_counter++;
+    set_write_byte(cache->set[find_set(address)], address, value);
 }
 
 float cache_get_miss_rate() {
@@ -30,8 +24,7 @@ float cache_get_miss_rate() {
 
 int cache_read_byte(unsigned int address, unsigned char* byte_to_read) {
     cache->access_counter++;
-    set_t* selected_set = cache->set[find_set(address)]; // obtengo set
-    if (set_read_byte(selected_set, address, byte_to_read) == -1) {
+    if (set_read_byte(cache->set[find_set(address)], address, byte_to_read) == -1) {
         cache->miss_counter++;
         return -1;
     }

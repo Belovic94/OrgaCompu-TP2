@@ -3,7 +3,6 @@
 #include "string.h"
 #include "strutil.h"
 
-char _get_operation(char* op);
 unsigned  int _get_address(char** address, int array_size, int pos);
 char _get_value(char** value, int array_size, int pos);
 
@@ -35,7 +34,7 @@ int parse(char *line, command_t *command) {
     int ret = 0;
     size_t array_size;
     char** split_line = split(line, ' ', &array_size);
-    char operation = _get_operation(split_line[0]);
+    char operation = split_line[0][0];
     command->operation = operation;
     switch (operation) {
         case 'F':

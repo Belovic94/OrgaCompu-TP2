@@ -4,7 +4,14 @@
 unsigned int _get_free_way_index(set_t* self);
 
 int set_get_oldest(set_t *self) {
-    return 0;
+    int oldest = -1;
+    unsigned int oldest_index = 0;
+    for (int i = 0; i < 8; ++i) {
+        if (self->ways[i]->old > oldest) {
+            oldest_index = i;
+        }
+    }
+    return oldest_index;
 }
 
 void set_destroy(set_t *self) {
@@ -14,16 +21,28 @@ void set_destroy(set_t *self) {
 int set_create(set_t *self) {
 }
 
-int _find_way(set_t *self, unsigned int address) {
-    int way = -1;
+//int _find_way(set_t *self, unsigned int address) {
+//    int way = -1;
+//    unsigned int tag = get_tag(address);
+//    for (int i = 0; i < 8; ++i) {
+//        if (self->ways[i]->valid != 1 && self->ways[i]->tag == tag) {
+//            way = i;
+//            break;
+//        }
+//    }
+//    return way;
+//}
+
+int set_write_byte(set_t *self, unsigned int address, unsigned char value) {
     unsigned int tag = get_tag(address);
     for (int i = 0; i < 8; ++i) {
-        if (self->ways[i]->valid != 1 && self->ways[i]->tag == tag) {
-            way = i;
-            break;
+        if (self->ways[i]->valid == 1 && self->ways[i]->tag == tag) {
+            way_write_byte(self->ways[i], get_offset(address), value);
+            return 0;
         }
     }
-    return way;
+    return -1;
+
 }
 
 int set_read_byte(set_t *self, unsigned int address, unsigned char *byte_to_read) {
@@ -55,6 +74,7 @@ unsigned int _get_free_way_index(set_t* self) {
         if (self->ways[i]->valid == 0) {
             return i;
         }
+        self->ways[i]->old++;
     }
     return -1;
 }

@@ -15,6 +15,8 @@ void way_destroy(way_t* self);
 
 unsigned char way_read_byte(way_t* self, unsigned int offset);
 
+void way_write_byte(way_t* self, unsigned int offset, unsigned char value);
+
 void way_save_block(way_t*, unsigned char* block, unsigned int address);
 
 void way_write_back(way_t* self, unsigned int index);

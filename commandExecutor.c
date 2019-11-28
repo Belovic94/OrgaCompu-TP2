@@ -54,11 +54,7 @@ void read_tocache(unsigned int way, unsigned int address) {
     cache_save_block(block, way, address);
 }
 
-
-//unsigned int get_offset(unsigned int address);
-//void read_tocache(unsigned int blocknum, unsigned int way, unsigned int set);
 //write_tomem (unsigned int blocknum, unsigned int way, unsigned int set);
 //unsigned char read_byte(unsigned int address);
 //void write_byte(unsigned int address, unsigned char value);
-//float get_miss_rate();
 
