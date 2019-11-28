@@ -1,10 +1,14 @@
 #ifndef ORGACOMPU_TP2_CACHE_BLOCK_H
 #define ORGACOMPU_TP2_CACHE_BLOCK_H
 
+
+#include <zconf.h>
+
 typedef struct {
-    int tag;
-    int valid;
+    u_int8_t tag;
+    u_int8_t valid;
     int oldest;
+    u_int64_t block;
 }cache_block_t;
 
 void cache_block_create(cache_block_t* self);

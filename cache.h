@@ -9,6 +9,7 @@ typedef struct {
     int access_counter;
     int miss_counter;
     queue_t* ways;
+
 } cache_t;
 
 int cache_create(cache_t *self);

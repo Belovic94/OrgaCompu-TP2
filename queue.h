@@ -4,7 +4,7 @@
 #include "cache_block.h"
 
 typedef struct {
-    cache_block_t*  cache_block;
+    cache_block_t* cache_block;
 }queue_t;
 
 int queue_create(queue_t* self);
