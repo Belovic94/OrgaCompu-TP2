@@ -5,20 +5,21 @@
 #define BLOCKS_NUMBER 32
 #define BLOCK_SIZE 64
 
-typedef struct {
+typedef struct
+{
     int access_counter;
     int miss_counter;
-    queue_t* ways;
+    queue_t *ways;
 
 } cache_t;
 
-int cache_create(cache_t *self);
+int cache_create(cache_t *self, queue_t *ways);
 
 void cache_destroy(cache_t *self);
 
 char cache_execute(cache_t *self);
 
-void cache_init(cache_t* self);
+void cache_init(cache_t *self);
 
 void init();
 void read();
@@ -27,7 +28,7 @@ unsigned int get_offset(unsigned int address);
 
 unsigned int select_oldest(unsigned int setnum);
 void read_tocache(unsigned int blocknum, unsigned int way, unsigned int set);
-write_tomem (unsigned int blocknum, unsigned int way, unsigned int set);
+write_tomem(unsigned int blocknum, unsigned int way, unsigned int set);
 unsigned char read_byte(unsigned int address);
 void write_byte(unsigned int address, unsigned char value);
 float get_miss_rate();
