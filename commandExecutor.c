@@ -1,56 +1,57 @@
 #include "commandExecutor.h"
+#include "addressHelper.h"
+#include "stdio.h"
 
 
-void init(command_executor_t *self);
-float get_miss_rate(command_executor_t *self);
-unsigned char read_byte(command_executor_t *self, unsigned int address);
-void write_byte(command_executor_t *self, unsigned int address, unsigned char value);
 
+void init();
+float get_miss_rate();
+unsigned char read_byte(unsigned int address);
+void write_byte(unsigned int address, unsigned char value);
+void read_tocache(unsigned int way, unsigned int address);
 
-void command_executor_create(command_executor_t *self, cache_t *cache, main_memory_t *mainMemory) {
-    self->cache = cache;
-    self->mainMemory = mainMemory;
-}
-
-void command_executor_destroy(command_executor_t *self) {
-
-}
-
-void command_executor_execute(command_executor_t *self, command_t *command) {
+void command_executor_execute(command_t *command) {
     switch (command->operation) {
         case 'F':
-            init(self);
+            init();
             break;
         case 'M':
-            get_miss_rate(self);
+            printf("%.3f", get_miss_rate());
             break;
         case 'R':
-            read_byte(self, command->address);
+            printf("%u", read_byte(command->address));
             break;
         case 'W':
-            write_byte(self, command->address, command->value);
+            write_byte(command->address, command->value);
             break;
     }
 }
 
-void init(command_executor_t *self) {
-
-    main_memory_init(self->mainMemory);
-    cache_init(self->cache);
+void init() {
+    main_memory_init();
+    cache_init();
 }
 
-float get_miss_rate(command_executor_t *self) {
-    return cache_get_miss_rate(self->cache);
+float get_miss_rate() {
+    return cache_get_miss_rate();
 }
 
-unsigned char read_byte(command_executor_t *self, unsigned int address) {
+unsigned char read_byte(unsigned int address) {
     unsigned char byte_to_read;
-    if(cache_read_byte(self->cache, address, &byte_to_read) == 0) {
-        
+    if(cache_read_byte(address, &byte_to_read) != -1) {
+        read_tocache(cache_get_free_way(find_set(address)), address);
+        cache_read_byte(address, &byte_to_read);
     }
+    return byte_to_read;
 }
-void write_byte(command_executor_t *self, unsigned int address, unsigned char value) {
-    cache_write_byte(self->cache, address, value);
+void write_byte(unsigned int address, unsigned char value) {
+    cache_write_byte(address, value);
+}
+
+void read_tocache(unsigned int way, unsigned int address) {
+    unsigned char block[BLOCK_SIZE];
+    main_memory_get_block(address/BLOCK_SIZE);
+    cache_save_block(block, way, address);
 }
 
 

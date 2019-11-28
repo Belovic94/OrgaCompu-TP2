@@ -4,15 +4,20 @@
 typedef struct {
     unsigned int tag: 5;
     unsigned int valid : 1;
-    unsigned int old;
-    char block[64];
+    unsigned int old: 3;
+    unsigned int dirty: 1;
+    unsigned char block[64];
 }way_t;
 
 void way_create(way_t* self);
 
 void way_destroy(way_t* self);
 
-char way_read_byte(way_t* self, unsigned int offset);
+unsigned char way_read_byte(way_t* self, unsigned int offset);
+
+void way_save_block(way_t*, unsigned char* block, unsigned int address);
+
+void way_write_back(way_t* self, unsigned int index);
 
 
 #endif //ORGACOMPU_TP2_CACHE_BLOCK_H

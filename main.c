@@ -7,24 +7,8 @@
 #include "mainMemory.h"
 #include "commandExecutor.h"
 
-int init()
-{
-    return 0;
-}
-
-int read_byte(unsigned int ddddd)
-{
-    return 0;
-}
-
-int write_byte(unsigned int ddddd, char vvv)
-{
-    return 0;
-}
-
-void init() {
-
-}
+cache_t* cache;
+main_memory_t* mainMemory;
 
 int main(int argc, char *argv[])
 {
@@ -34,12 +18,8 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     filereader_t file;
     filereader_create(&file, fp);
-    cache_t cache;
-    cache_create(&cache);
-    main_memory_t mainMemory;
-    main_memory_create(&mainMemory);
-    command_executor_t commandExecutor;
-    command_executor_create(&commandExecutor, &cache, &mainMemory);
+    cache_create();
+    main_memory_create();
     char *line = NULL;
     while (filereader_next(&file, line) == EXIT_SUCCESS) {
         command_t command;
@@ -47,7 +27,7 @@ int main(int argc, char *argv[])
             fprintf(stdout, "Invalid command");
             continue;
         }
-        command_executor_execute(&commandExecutor, &command);
+        command_executor_execute(&command);
         command_destroy(&command);
         printf("%s", line);
     }
