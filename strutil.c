@@ -13,7 +13,7 @@ char* add_string(const char* str, size_t indice){
     return str_aux;
 }
 
-char** split(const char* str, char sep, size_t* size){
+char** split(const char* str, char sep, int* size){
     char* vector[strlen(str)];
     char *pal_aux = strchr(str, sep);
     size_t i = 0;
@@ -35,7 +35,7 @@ char** split(const char* str, char sep, size_t* size){
     for (int j = 0; j <= i ; j++){
         strv[j] = vector[j];
     }
-    size = i;
+    *size = i;
     return strv;
 }
 

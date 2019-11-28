@@ -9,9 +9,7 @@ void filereader_destroy(filereader_t *self) {
     fclose(self->fp);
 }
 
-int filereader_next(filereader_t *self, char* line) {
-    //    char *line = NULL;
-//    size_t len = 0;
-//    size_t read;
-    //    while ((read = getline(&line, &len, fp)) != -1)
+int filereader_next(filereader_t *self, char** line) {
+    size_t len = 0;
+    return getline(line, &len, self->fp);
 }

@@ -10,4 +10,4 @@ add_executable(OrgaCompu_TP2
         tests/prueba3b.mem
         tests/prueba4.mem
         tests/prueba5.mem
-        main.c command.c command.h cache.c cache.h set.c set.h way.c way.h fileReader.c fileReader.h commandParser.c commandParser.h commandExecutor.c commandExecutor.h addressHelper.c addressHelper.h mainMemory.c mainMemory.h)
+        main.c command.c command.h cache.c cache.h set.c set.h way.c way.h fileReader.c fileReader.h commandParser.c commandParser.h commandExecutor.c commandExecutor.h addressHelper.c addressHelper.h mainMemory.c mainMemory.h strutil.c strutil.h)

@@ -1,9 +1,9 @@
 #ifndef ORGACOMPU_TP2_COMMAND_H
 #define ORGACOMPU_TP2_COMMAND_H
 typedef struct {
-    char operation;
+    unsigned char operation;
     unsigned int address;
-    char value;
+    unsigned char value;
 }command_t;
 
 int command_create(command_t* self, char* line);

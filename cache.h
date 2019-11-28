@@ -20,6 +20,8 @@ float cache_get_miss_rate();
 
 int cache_read_byte(unsigned int address, unsigned char* byte_to_read);
 
+cache_write_byte(unsigned int address, unsigned int value);
+
 unsigned int cache_get_free_way(unsigned int set);
 
 void cache_save_block(unsigned char* block, unsigned int way, unsigned int set);
