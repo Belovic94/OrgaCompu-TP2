@@ -11,7 +11,7 @@ void filereader_create(filereader_t* self, FILE* fp);
 
 void filereader_destroy(filereader_t* self);
 
-int filereader_next(filereader_t* self, char* line);
+int filereader_next(filereader_t* self, char** line);
 
 
 

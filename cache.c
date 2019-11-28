@@ -38,3 +38,8 @@ unsigned int cache_get_free_way(unsigned int set) {
 void cache_save_block(unsigned char *block, unsigned int way, unsigned int address) {
     set_save_block(cache->set[find_set(address)], way, block, address);
 }
+
+void cache_init() {
+
+}
+
