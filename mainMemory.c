@@ -19,8 +19,10 @@ void main_memory_get_block(unsigned int blockNum, unsigned char* block) {
     }
 }
 
-void main_memory_save_block(unsigned char *block, unsigned int pos) {
-
+void main_memory_save_block(unsigned char *block, unsigned int blockNum) {
+    for (int i = 0; i < BLOCK_SIZE; ++i) {
+        mainMemory.memoryTable[blockNum + i] = block[i];
+    }
 }
 
 void main_memory_destroy() {

@@ -16,10 +16,10 @@ void command_executor_execute(command_t *command) {
             init();
             break;
         case 'M':
-            printf("%.3f", get_miss_rate());
+            printf("%.3f \n", get_miss_rate());
             break;
         case 'R':
-            printf("%u", read_byte(command->address));
+            printf("%u \n", read_byte(command->address));
             break;
         case 'W':
             write_byte(command->address, command->value);
@@ -37,7 +37,7 @@ float get_miss_rate() {
 
 unsigned char read_byte(unsigned int address) {
     unsigned char byte_to_read;
-    if(cache_read_byte(address, &byte_to_read) != -1) {
+    if(cache_read_byte(address, &byte_to_read) != 0) {
         read_tocache(cache_get_free_way(find_set(address)), address);
         cache_read_byte(address, &byte_to_read);
     }

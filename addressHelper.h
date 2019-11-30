@@ -3,6 +3,7 @@
 
 #define BLOCKS_NUMBER 32
 #define BLOCK_SIZE 64
+#define WAYS_NUMBER 8
 
 unsigned int find_set(unsigned int address);
 unsigned int get_offset(unsigned int address);

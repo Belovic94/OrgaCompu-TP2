@@ -1,12 +1,11 @@
 #include "set.h"
-#include "addressHelper.h"
 
 unsigned int _get_free_way_index(set_t* self);
 
 int set_get_oldest(set_t *self) {
     int oldest = -1;
     unsigned int oldest_index = 0;
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < WAYS_NUMBER; ++i) {
         if (self->ways[i].old > oldest) {
             oldest_index = i;
         }
@@ -14,13 +13,11 @@ int set_get_oldest(set_t *self) {
     return oldest_index;
 }
 
-void set_destroy(set_t *self) {
-
-}
+void set_destroy(set_t *self) {}
 
 int set_create(set_t *self, int index) {
     self->index = index;
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < WAYS_NUMBER; ++i) {
         way_create(&self->ways[i]);
     }
     return 0;
@@ -28,7 +25,7 @@ int set_create(set_t *self, int index) {
 
 int set_write_byte(set_t *self, unsigned int address, unsigned char value) {
     unsigned int tag = get_tag(address);
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < WAYS_NUMBER; ++i) {
         if (self->ways[i].valid == 1 && self->ways[i].tag == tag) {
             way_write_byte(&self->ways[i], get_offset(address), value);
             return 0;
@@ -40,7 +37,7 @@ int set_write_byte(set_t *self, unsigned int address, unsigned char value) {
 
 int set_read_byte(set_t *self, unsigned int address, unsigned char *byte_to_read) {
     unsigned int tag = get_tag(address);
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < WAYS_NUMBER; ++i) {
         if (self->ways[i].valid == 1 && self->ways[i].tag == tag) {
             *byte_to_read = way_read_byte(&self->ways[i], get_offset(address));
             return 0;
@@ -62,8 +59,14 @@ void set_save_block(set_t *self, unsigned int way, unsigned char *block, unsigne
     way_save_block(&self->ways[way], block, address);
 }
 
+void set_init(set_t *self) {
+    for (int i = 0; i < WAYS_NUMBER; ++i) {
+        way_init(&self->ways[i]);
+    }
+}
+
 unsigned int _get_free_way_index(set_t* self) {
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < WAYS_NUMBER; ++i) {
         if (self->ways[i].valid == 0) {
             return i;
         }

@@ -12,7 +12,11 @@ int cache_create() {
     return 0;
 }
 
-void cache_destroy() {}
+void cache_destroy() {
+    for (int i = 0; i < BLOCKS_NUMBER; ++i) {
+
+    }
+}
 
 int cache_write_byte(unsigned int address, unsigned char value) {
     cache.access_counter++;
@@ -48,6 +52,11 @@ void cache_save_block(unsigned char *block, unsigned int way, unsigned int addre
 }
 
 void cache_init() {
+    cache.access_counter = 0;
+    cache.miss_counter = 0;
+    for (int i = 0; i < BLOCKS_NUMBER; ++i) {
+        set_init(&cache.set[i]);
+    }
 
 }
 

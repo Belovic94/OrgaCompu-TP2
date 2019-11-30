@@ -21,5 +21,7 @@ void way_save_block(way_t*, unsigned char* block, unsigned int address);
 
 void way_write_back(way_t* self, unsigned int index);
 
+void way_init(way_t* self);
+
 
 #endif //ORGACOMPU_TP2_CACHE_BLOCK_H

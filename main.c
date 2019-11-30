@@ -7,8 +7,7 @@
 #include "mainMemory.h"
 #include "commandExecutor.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     FILE *fp;
     fp = fopen(argv[1], "r");
     if (fp == NULL)
@@ -26,13 +25,14 @@ int main(int argc, char *argv[])
             continue;
         }
         line[strlen(line) -1] = '\0';
+        printf("%s \n", line);
         command_t command;
         if (command_create(&command, line) != 0) {
-            fprintf(stdout, "Invalid command");
+            fprintf(stdout, "Invalid command\n");
             continue;
         }
         command_executor_execute(&command);
-        printf("%s \n", line);
+        command_destroy(&command);
     }
     cache_destroy();
     main_memory_destroy();
