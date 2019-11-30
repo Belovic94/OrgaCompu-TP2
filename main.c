@@ -7,9 +7,6 @@
 #include "mainMemory.h"
 #include "commandExecutor.h"
 
-cache_t* cache;
-main_memory_t* mainMemory;
-
 int main(int argc, char *argv[])
 {
     FILE *fp;
@@ -18,8 +15,10 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     filereader_t file;
     filereader_create(&file, fp);
-    //cache_create();
-    //main_memory_create();
+    if (cache_create() != 0 || main_memory_create() != 0) {
+        filereader_destroy(&file);
+        exit(EXIT_SUCCESS);
+    }
     char *line = NULL;
     while (filereader_next(&file, &line) != -1) {
         line[strlen(line) -1] = '\0';
@@ -28,9 +27,11 @@ int main(int argc, char *argv[])
             fprintf(stdout, "Invalid command");
             continue;
         }
-        //command_executor_execute(&command);
+        command_executor_execute(&command);
         printf("%s \n", line);
     }
+    cache_destroy();
+    main_memory_destroy();
     filereader_destroy(&file);
     exit(EXIT_SUCCESS);
 }

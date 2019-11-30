@@ -2,16 +2,14 @@
 #define ORGACOMPU_TP2_MAINMEMORY_H
 
 typedef struct {
-    char* memoryTable;
+    unsigned char* memoryTable;
 }main_memory_t;
 
-void main_memory_create();
+int main_memory_create();
 
 void main_memory_destroy();
 
-void main_memory_init();
-
-unsigned char* main_memory_get_block(unsigned int address);
+void main_memory_get_block(unsigned int blockNum, unsigned char* block);
 
 void main_memory_save_block(unsigned char* block, unsigned int pos);
 

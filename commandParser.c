@@ -57,11 +57,11 @@ int parse(char *line, command_t *command){
         case 'M':
             break;
         case 'R':
-            command->address = _get_address(split_line, array_size, 1);
+            command->address = _get_address(split_line, array_size);
             break;
         case 'W':
-            command->address = _get_address(split_line, array_size, 1);
-            command->value = _get_value(split_line, array_size, 2);
+            command->address = _get_address(split_line, array_size);
+            command->value = _get_value(split_line, array_size);
             break;
 
         default:

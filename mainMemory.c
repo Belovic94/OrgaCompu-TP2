@@ -1,21 +1,30 @@
 #include "mainMemory.h"
+#include "stdlib.h"
+#include "addressHelper.h"
 
-extern main_memory_t* mainMemory;
+main_memory_t mainMemory;
 
-void main_memory_create() {}
-
-void main_memory_init() {
-
+int main_memory_create() {
+    unsigned char* aTable = calloc(65536, sizeof(unsigned char));
+    if (aTable == NULL) {
+        return -1;
+    }
+    mainMemory.memoryTable = aTable;
+    return 0;
 }
 
-unsigned char *main_memory_get_block(unsigned int address) {
-
+void main_memory_get_block(unsigned int blockNum, unsigned char* block) {
+    for (int i = 0; i < BLOCK_SIZE; ++i) {
+        block[i] = mainMemory.memoryTable[blockNum + i];
+    }
 }
 
 void main_memory_save_block(unsigned char *block, unsigned int pos) {
 
 }
 
-void main_memory_destroy();
+void main_memory_destroy() {
+    free(mainMemory.memoryTable);
+}
 
 

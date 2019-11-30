@@ -4,11 +4,11 @@
 #include "way.h"
 
 typedef struct {
-    way_t* ways[8];
+    way_t ways[8];
     unsigned int index: 5;
 }set_t;
 
-int set_create(set_t* self);
+int set_create(set_t* self, int index);
 
 void set_destroy(set_t* self);
 

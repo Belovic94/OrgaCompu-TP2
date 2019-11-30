@@ -28,7 +28,6 @@ void command_executor_execute(command_t *command) {
 }
 
 void init() {
-    main_memory_init();
     cache_init();
 }
 
@@ -45,16 +44,15 @@ unsigned char read_byte(unsigned int address) {
     return byte_to_read;
 }
 void write_byte(unsigned int address, unsigned char value) {
-    cache_write_byte(address, value);
+    if (cache_write_byte(address, value) != 0) {
+        read_tocache(cache_get_free_way(find_set(address)), address);
+        cache_write_byte(address, value);
+    }
 }
 
 void read_tocache(unsigned int way, unsigned int address) {
     unsigned char block[BLOCK_SIZE];
-    main_memory_get_block(address/BLOCK_SIZE);
+    main_memory_get_block(address/BLOCK_SIZE, block);
     cache_save_block(block, way, address);
 }
-
-//write_tomem (unsigned int blocknum, unsigned int way, unsigned int set);
-//unsigned char read_byte(unsigned int address);
-//void write_byte(unsigned int address, unsigned char value);
 
