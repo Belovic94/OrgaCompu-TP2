@@ -21,6 +21,10 @@ int main(int argc, char *argv[])
     }
     char *line = NULL;
     while (filereader_next(&file, &line) != -1) {
+        if(empty_line(line) == 1) {
+            fprintf(stdout, "Empty line \n");
+            continue;
+        }
         line[strlen(line) -1] = '\0';
         command_t command;
         if (command_create(&command, line) != 0) {

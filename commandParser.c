@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "commandParser.h"
 #include "string.h"
 #include "strutil.h"
@@ -9,32 +10,29 @@ unsigned int _get_address(char **split_line, int array_size){
         if(split_line[0][0] == 'W'){
             strncpy(address, split_line[1], strlen(split_line[1])-1);
         }
-        return atoi(address);
+        int result_address = atoi(address);
+        if(result_address < 65536) {
+            return result_address;
+        }
     }
+    fprintf(stdout, "Invalid address\n");
     return -1;
 }
 
 unsigned char _get_value(char **split_line, int array_size){
     if(array_size > 2) {
-        return atoi(split_line[2]);
-
+        int result_value = atoi(split_line[2]);
+        if(result_value <= 255) {
+            return result_value;
+        }
     }
+    fprintf(stdout, "Invalid value\n");
+    return -1;
 }
 
-int _empty_line(char *str) {
-    return strlen(str) == 0;
-}
-
-int _valid_command(char *str) {
-    return 0;
-}
-
-int _validate_operation(char *str) {
-    int ret = 0;
-    if (!(_empty_line(str) || _valid_command(str))) {
-        ret = 1;
-    }
-    return ret;
+int empty_line(char *str) {
+    int aux = strcmp(str, "\n") == 0 || strcmp(str,"\r\n") == 0;
+    return aux;
 }
 
 int _validate_address(char address) {
