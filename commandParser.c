@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "commandParser.h"
 #include "string.h"
 #include "strutil.h"
@@ -21,20 +22,9 @@ unsigned char _get_value(char **split_line, int array_size){
     }
 }
 
-int _empty_line(char *str) {
-    return strlen(str) == 0;
-}
-
-int _valid_command(char *str) {
-    return 0;
-}
-
-int _validate_operation(char *str) {
-    int ret = 0;
-    if (!(_empty_line(str) || _valid_command(str))) {
-        ret = 1;
-    }
-    return ret;
+int empty_line(char *str) {
+    int aux = strcmp(str, "\n") == 0 || strcmp(str,"\r\n") == 0;
+    return aux;
 }
 
 int _validate_address(char address) {
@@ -57,11 +47,11 @@ int parse(char *line, command_t *command){
         case 'M':
             break;
         case 'R':
-            command->address = _get_address(split_line, array_size, 1);
+            command->address = _get_address(split_line, array_size);
             break;
         case 'W':
-            command->address = _get_address(split_line, array_size, 1);
-            command->value = _get_value(split_line, array_size, 2);
+            command->address = _get_address(split_line, array_size);
+            command->value = _get_value(split_line, array_size);
             break;
 
         default:
