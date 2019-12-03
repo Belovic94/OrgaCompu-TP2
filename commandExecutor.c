@@ -16,10 +16,10 @@ void command_executor_execute(command_t *command) {
             init();
             break;
         case 'M':
-            printf("%.3f \n", get_miss_rate());
+            printf("El miss rate es: %.3f \n", get_miss_rate());
             break;
         case 'R':
-            printf("%u \n", read_byte(command->address));
+            printf("El valor leido es: %u \n", read_byte(command->address));
             break;
         case 'W':
             write_byte(command->address, command->value);

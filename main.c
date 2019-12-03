@@ -24,8 +24,10 @@ int main(int argc, char *argv[]) {
             fprintf(stdout, "Empty line \n");
             continue;
         }
-        line[strlen(line) -1] = '\0';
-        printf("%s \n", line);
+        if ( line[strlen(line) -1] == '\n') {
+            line[strlen(line) -1] = '\0';
+        }
+        printf("Se leyó el comando: %s \n", line);
         command_t command;
         if (command_create(&command, line) != 0) {
             fprintf(stdout, "Invalid command\n");
