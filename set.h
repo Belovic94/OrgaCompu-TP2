@@ -13,7 +13,7 @@ int set_create(set_t* self, int index);
 
 void set_destroy(set_t* self);
 
-int set_get_oldest();
+int set_get_oldest(set_t* self);
 
 int set_write_byte(set_t *self, unsigned int address, unsigned char value);
 

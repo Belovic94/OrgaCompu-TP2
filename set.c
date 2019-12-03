@@ -13,7 +13,11 @@ int set_get_oldest(set_t *self) {
     return oldest_index;
 }
 
-void set_destroy(set_t *self) {}
+void set_destroy(set_t *self) {
+    for (int i = 0; i < WAYS_NUMBER ; ++i) {
+        way_destroy(&self->ways[i]);
+    }
+}
 
 int set_create(set_t *self, int index) {
     self->index = index;

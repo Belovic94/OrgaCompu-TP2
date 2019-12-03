@@ -78,6 +78,7 @@ int parse(char *line, command_t *command){
             ret = -1;
             break;
     }
+    free_split(split_line);
     return ret;
 }
 

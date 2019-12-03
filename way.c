@@ -14,7 +14,9 @@ void way_create(way_t *self) {
     self->old = 0;
 }
 
-void way_destroy(way_t *self) {}
+void way_destroy(way_t *self) {
+
+}
 
 void way_save_block(way_t * self, unsigned char *block, unsigned int address) {
     for (int i = 0; i < BLOCK_SIZE; ++i) {

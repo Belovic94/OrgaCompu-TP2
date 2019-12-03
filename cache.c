@@ -1,4 +1,3 @@
-#include <zconf.h>
 #include "cache.h"
 
 cache_t cache;
@@ -14,7 +13,7 @@ int cache_create() {
 
 void cache_destroy() {
     for (int i = 0; i < BLOCKS_NUMBER; ++i) {
-
+        set_destroy(&cache.set[i]);
     }
 }
 
