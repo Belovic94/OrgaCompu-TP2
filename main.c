@@ -18,7 +18,6 @@ int main(int argc, char *argv[]) {
         filereader_destroy(&file);
         exit(EXIT_SUCCESS);
     }
-    cache_init();
     char *line = NULL;
     while (filereader_next(&file, &line) != -1) {
         if(empty_line(line) == 1) {
