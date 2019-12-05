@@ -46,8 +46,6 @@ int cache_read_byte(unsigned int address, unsigned char* byte_to_read) {
         printf("Se produjo un miss de lectura al intentar leer en la dirección: %u \n", address);
         cache.miss_counter++;
         return -1;
-    } else {
-        printf("Se leyó el valor: %u en la dirección: %u \n", *byte_to_read, address);
     }
     return 0;
 }

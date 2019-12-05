@@ -1,4 +1,5 @@
 #include "set.h"
+#include "stdio.h"
 
 unsigned int _get_free_way_index(set_t* self);
 
@@ -8,6 +9,7 @@ int set_get_oldest(set_t *self) {
     for (int i = 0; i < WAYS_NUMBER; ++i) {
         if (self->ways[i].old > oldest) {
             oldest_index = i;
+            oldest = self->ways[i].old;
         }
     }
     return oldest_index;
@@ -53,6 +55,7 @@ int set_read_byte(set_t *self, unsigned int address, unsigned char *byte_to_read
 unsigned int set_get_free_way(set_t* self) {
     unsigned int way_index = _get_free_way_index(self);
     if (way_index == -1) {
+        printf("Todas las vias están llenas, se procede a aplicar la politica de reemplazo\n");
         way_index = set_get_oldest(self);
         way_write_back(&self->ways[way_index], self->index);
     }
@@ -74,7 +77,9 @@ unsigned int _get_free_way_index(set_t* self) {
         if (self->ways[i].valid == 0) {
             return i;
         }
-        self->ways[i].old++;
+        if (self->ways[i].old < 7) {
+            self->ways[i].old++;
+        }
     }
     return -1;
 }

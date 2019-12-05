@@ -24,14 +24,14 @@ void way_save_block(way_t * self, unsigned char *block, unsigned int address) {
     }
     self->valid = 1;
     self->tag = get_tag(address);
-    self->old++;
+    self->old = 0;
     self->dirty = 0;
 }
 
 void way_write_back(way_t *self, unsigned int index) {
     if (self->dirty == 1) {
-        unsigned int pos = (self->tag << 11) | (index << 6);
-        main_memory_save_block(self->block, pos);
+        unsigned int address = (self->tag << 11) | (index << 6);
+        main_memory_write_toMem(self->block, address);
     }
 }
 

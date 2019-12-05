@@ -9,8 +9,8 @@ int main_memory_create();
 
 void main_memory_destroy();
 
-void main_memory_get_block(unsigned int blockNum, unsigned char* block);
+void main_memory_read_tocache(unsigned int blockNum, unsigned char *block);
 
-void main_memory_save_block(unsigned char* block, unsigned int pos);
+void main_memory_write_toMem(const unsigned char* block, unsigned int address);
 
 #endif //ORGACOMPU_TP2_MAINMEMORY_H

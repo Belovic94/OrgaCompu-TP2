@@ -14,22 +14,24 @@ int main_memory_create() {
     return 0;
 }
 
-void main_memory_get_block(unsigned int blockNum, unsigned char* block) {
-    printf("Se produjo un acceso a memoria principal y se cargo el bloque: %d  en memoria cache \n", blockNum);
-    for (int i = 0; i < BLOCK_SIZE; ++i) {
-        block[i] = mainMemory.memoryTable[blockNum + i];
-    }
-}
-
-void main_memory_save_block(unsigned char *block, unsigned int blockNum) {
-    printf("Se produjo un acceso a memoria principal para modificar el bloque: %d \n", blockNum);
-    for (int i = 0; i < BLOCK_SIZE; ++i) {
-        mainMemory.memoryTable[blockNum + i] = block[i];
-    }
-}
-
 void main_memory_destroy() {
     free(mainMemory.memoryTable);
+}
+
+void main_memory_read_tocache(unsigned int blockNum, unsigned char *block) {
+    printf("Se produjo un acceso a memoria principal para cargar el bloque correspondiente "
+           "a la dirección: %d  en memoria cache \n", blockNum * BLOCK_SIZE);
+    for (int i = 0; i < BLOCK_SIZE; ++i) {
+        block[i] = mainMemory.memoryTable[(blockNum * BLOCK_SIZE) + i];
+    }
+}
+
+void main_memory_write_toMem(const unsigned char *block, unsigned int address) {
+    printf("Se produjo un acceso a memoria principal para guardar el bloque correspondiente "
+           "a la dirección: %d \n", address);
+    for (int i = 0; i < BLOCK_SIZE; ++i) {
+        mainMemory.memoryTable[address + i] = block[i];
+    }
 }
 
 

@@ -19,7 +19,7 @@ void command_executor_execute(command_t *command) {
             printf("El miss rate es: %.3f \n", get_miss_rate());
             break;
         case 'R':
-            printf("El valor leido es: %u \n", read_byte(command->address));
+            printf("Se leyó el valor: %u en la dirección: %u \n", read_byte(command->address), command->address);
             break;
         case 'W':
             write_byte(command->address, command->value);
@@ -52,7 +52,7 @@ void write_byte(unsigned int address, unsigned char value) {
 
 void read_tocache(unsigned int way, unsigned int address) {
     unsigned char block[BLOCK_SIZE];
-    main_memory_get_block(address/BLOCK_SIZE, block);
+    main_memory_read_tocache(address / BLOCK_SIZE, block);
     cache_save_block(block, way, address);
 }
 
